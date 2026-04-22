@@ -31,7 +31,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: test 
     if: github.refs == 'refs/head/main'
-
+    permissions:
+      contents: write  
+            # ← allows the job to write to your repo
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
